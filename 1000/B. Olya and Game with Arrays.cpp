@@ -30,46 +30,27 @@ const int MOD = 1e9 + 7;
 void solve() {
     // your solution code
 
-    int n , p;
-    cin >> n >> p;
+  int n;
+  cin >> n;
 
-    vector<pair<int , int>> v(n);
-    vi a(n) , b(n);
+    int sum = 0 , mini = INT_MAX , sec_mini = INT_MAX;
+  rep( i , 0 , n){
+    int k;
+    cin >> k;
 
-    in(a , n);
-    in(b , n);
+    vi a(k);
+    in (a , k);
 
-    rep(i , 0 , n){
-        v[i] = {b[i] , a[i]};
-    }
+    sort(a.begin() , a.end());
 
-    sort(v.begin() , v.end());
+   sum += a[1];
 
-    int mini = p;
-    int cnt = 1;
+    mini = min(mini , a[0]);
+    sec_mini = min(sec_mini , a[1]);
+  }
 
-    for(auto it : v){
-        int can = it.second;
-        int cost = it.first;
-
-        if(cost >= p){
-            break;
-        }
-        if(cnt + can > n){
-            mini += (n-cnt)*cost;
-            cnt = n;
-        } 
-
-        else {
-            mini += can*cost;
-            cnt += can;
-        }
-    }
-
-    mini += (n - cnt)*p;
-    cout << mini << endl;
-   
-    
+  int ans = sum + mini - sec_mini;
+  cout << ans << endl;
 
 }
 int32_t main() {
