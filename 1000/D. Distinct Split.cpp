@@ -11,7 +11,7 @@
 #include <climits>
 #include <cstring>
 using namespace std;
-#define int long long
+// #define int long long
 #define vi vector<int>
 #define pii pair<int, int>
 #define pb push_back
@@ -32,54 +32,37 @@ const int MOD = 1e9 + 7;
     for (auto x : a)      \
         cout << x << " "; \
     cout << '\n'
-
 void solve()
 {
     int n;
     cin >> n;
+    string s;
+    cin >> s;
 
-    vi a(n);
-    in(a, n);
+    map<char, int> mp;
 
-    vi b(n);
-    in(b, n);
-
-    unordered_map<int, int> mp1, mp2;
-
-    int i = 0, j = 0;
-
-    while (i < n && j < n)
+    each(c, s)
     {
-        if (a[i] == a[j])
+        mp[c]++;
+    }
+
+    int ans = 0;
+
+    map<char, int> mp1;
+
+    for (int i = s.size() - 1; i >= 0; i--)
+    {
+        mp[s[i]]--;
+        if (mp[s[i]] == 0)
         {
-            mp1[a[i]] = max(j - i + 1, mp1[a[i]]);
-            j++;
-            continue;
+            mp.erase(s[i]);
         }
-        i = j;
-    }
+        mp1[s[i]]++;
 
-    i = 0, j = 0;
-    while (i < n && j < n)
-    {
-        if (b[i] == b[j])
-        {
-            mp2[b[i]] = max(j - i + 1, mp2[b[i]]);
-            j++;
-            continue;
-        }
-        i = j;
+        ans = max(ans, int(mp.size()) + int(mp1.size()));
     }
-    int maxi = 0;
-
-    for (int i = 0; i < 2 * n + 1; i++)
-    {
-        maxi = max(maxi, mp1[i] + mp2[i]);
-    }
-
-    cout << maxi << endl;
+    cout << ans << endl;
 }
-
 int32_t main()
 {
     fastio();
