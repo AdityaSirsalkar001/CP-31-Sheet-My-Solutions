@@ -1,0 +1,1 @@
+{"name":"Local: M","url":"/home/aditya-sirsalkar/Desktop/CP-31/1000/M. Minimum LCM.cpp","tests":[{"id":1754479843099,"input":"4\n2\n9\n5\n10\n","output":"1 1\n3 6\n1 4\n5 5\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/aditya-sirsalkar/Desktop/CP-31/1000/M. Minimum LCM.cpp","group":"local","local":true}
