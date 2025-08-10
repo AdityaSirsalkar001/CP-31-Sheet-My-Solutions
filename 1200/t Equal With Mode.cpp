@@ -29,7 +29,44 @@ const int MOD = 1e9 + 7;
 #define out(a) for (auto x : a) cout << x << " "; cout << '\n'
 
 void solve() {
-    
+        int n;
+        cin >> n;
+
+        vi a(n);
+        in(a , n);
+
+        bool odd = false , even = false;
+        rep(i , 0 , n){
+            if(a[i] % 2 == 0){
+                even = true;
+            }
+            else odd = true;
+        }
+
+        if(even && odd){
+            cout << 2 << endl;
+            return;
+        }
+
+        else{
+            int cnt = 0;
+            int ans = 4;
+            while(cnt != 2){
+      
+                map<int , int> mp;
+                rep(i , 0 , n){
+                   
+                    mp[a[i] % ans]++;
+                }
+                cnt = mp.size();
+                if(cnt == 2){
+                    break;
+                }
+                else ans *= 2;
+                
+            }
+            cout << ans << endl;
+        }
 }
 int32_t main() {
     fastio();

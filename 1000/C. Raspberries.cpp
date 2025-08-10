@@ -11,6 +11,7 @@ int main() {
 	    
 	    cin >> n >> k;
 	    
+		
 	    vector<long long int> arr(n);
 	    
 	    long long int even = 0;
