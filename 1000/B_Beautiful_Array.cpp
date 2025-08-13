@@ -49,7 +49,7 @@ void solve() {
         return;
     }
 
-      if(cnt >= k-1){
+       if(cnt >= k-1){
             ans[0] += k - 1;
             cnt -= k - 1;
         }
