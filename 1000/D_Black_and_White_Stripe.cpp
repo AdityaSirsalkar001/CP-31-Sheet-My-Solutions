@@ -33,50 +33,25 @@ const int MOD = 1e9 + 7;
         cout << x << " "; \
     cout << '\n'
 void solve() {
-    int n, k;
-    cin >> n >> k;
+  int n , k;
+  cin >> n >> k;
 
-    vi a(n);
-    in(a, n);
+  string s;
+  cin >> s;
 
-    map<int, vector<int>> mp;
-
-    // Store positions of each value
-    for (int i = 0; i < n; i++) {
-        mp[a[i]].push_back(i);
+   vi prefix(n+1 , 0);
+    for(int i = 0; i < n; i++){
+        prefix[i+1] = prefix[i] + (s[i] == 'W');
     }
-
     int ans = INT_MAX;
 
-    for (auto &it : mp) {
-        auto &v = it.second;
-        sort(v.begin(), v.end()); // Ensure positions are sorted
-
-        if (v.size() < 2) continue; // No gap to compare
-
-        int diff = INT_MIN;
-        int change = -1;
-
-        for (int i = 1; i < v.size(); i++) {
-            if (diff < v[i] - v[i - 1] - 1) {
-                diff = v[i] - v[i - 1] - 1;
-                change = (v[i] + v[i - 1]) / 2;
-            }
-        }
-
-        if (change != -1) {
-            v.push_back(change);
-            sort(v.begin(), v.end());
-
-            diff = INT_MIN;
-            for (int i = 1; i < v.size(); i++) {
-                diff = max(diff, v[i] - v[i - 1] - 1);
-            }
-            ans = min(ans, diff);
-        }
+    for(int i = 0; i <= n-k; i++){
+        int diff = prefix[i+k] - prefix[i];
+        ans = min(diff , ans);
     }
 
-    cout << ans << "\n";
+    cout << ans << endl;
+
 }
 
 int32_t main(){
