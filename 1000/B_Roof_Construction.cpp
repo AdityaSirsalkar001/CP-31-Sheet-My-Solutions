@@ -28,30 +28,28 @@ const int MOD = 1e9 + 7;
 #define in(a, n) rep(i, 0, n) cin >> a[i]
 #define out(a) for (auto x : a) cout << x << " "; cout << '\n'
 void solve() {
+   int n;
+   cin >> n;
+   n--;
+   int msb = log2(n);
+   vector<int>ans;
 
-  int n;
-  cin >> n;
+   int num = pow(2 , msb) - 1;
+   while(num >= 0){
+    ans.push_back(num);
+    num--;
+   }
+   num = pow(2 , msb);
+   while(num <= n){
+    ans.push_back(num);
+    num++;
+   }
 
-  int sum = 0 , mini = INT_MAX , sec_mini = INT_MAX;
-  rep( i , 0 , n){
-    int k;
-    cin >> k;
-
-    vi a(k);
-    in (a , k);
-
-    sort(a.begin() , a.end());
-
-   sum += a[1];
-
-    mini = min(mini , a[0]);
-    sec_mini = min(sec_mini , a[1]);
-  }
-
-   int ans = sum + mini - sec_mini;
-   cout << ans << endl;
-  
-  
+   for(auto it: ans){
+    cout << it << " ";
+ 
+   }
+      cout << endl;
 }
 int32_t main() {
     fastio();
