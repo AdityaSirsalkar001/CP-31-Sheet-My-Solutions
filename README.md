@@ -1,26 +1,34 @@
-# 📘 CP 31 Sheet – My Solutions (WIP)
+# 📘 CP 31 Sheet – Solutions Repository
 
-This repository contains my ongoing solutions to the **CP 31 Sheet**, a well-structured collection of competitive programming problems aimed at improving problem-solving skills. The sheet includes problems of varying difficulty from 800 to 1800+ ratings.
+This repository contains my solutions to the **CP 31 Sheet** — a structured set of competitive programming problems designed to build strong problem-solving skills across multiple difficulty levels.
 
-## 🚀 Current Progress
+## 🚀 About
 
-- ✅ Completed: 800-rated problems
-- 🔄 In Progress: Moving to higher-rated problems soon
-- 🧠 Language Used: C++
+The CP 31 Sheet covers a wide range of problems (800 → 1800+ rating), helping in:
+- Strengthening core **DSA concepts**
+- Improving **problem-solving speed and accuracy**
+- Preparing for platforms like **Codeforces, CodeChef, and LeetCode**
+
+## 🧠 Tech Stack
+
+- **Language:** C++
+- Focus on writing **clean, efficient, and readable code**
 
 ## 📂 Repository Structure
 
-Solutions are organized by topic or rating level as I progress. Each solution includes:
-- Clear and simple C++ code
-- Comments (where needed) for better understanding
+Solutions are organized systematically (by topic and/or rating).  
+Each solution aims to include:
+- Simple and clear implementation
+- Optimized approach
+- Comments wherever necessary for understanding
 
-## 🎯 Objective
+## 🎯 Purpose
 
-This repo serves as my personal CP practice log. I'm using this sheet to:
-- Build strong fundamentals in data structures and algorithms
-- Practice consistently for Codeforces, CodeChef, and LeetCode contests
-- Track my growth over time
+This repository serves as:
+- A **personal CP practice log**
+- A **revision resource** for important problems
+- A way to **track consistency and improvement over time**
 
-## 📅 Status
+## 📌 Note
 
-> ⏳ **Work in Progress** – More problems will be added regularly.
+This is an ongoing repository. Solutions will be added continuously as I progress through the sheet.
